@@ -2,7 +2,6 @@ version: '2'
 services:
   codecept:
       image: codeception/codeception
-      #entrypoint: 'bash'
       depends_on:
         - chrome
         - firefox
