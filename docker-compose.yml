@@ -1,0 +1,19 @@
+version: '2'
+services:
+  codecept:
+      image: codeception/codeception
+      #entrypoint: 'bash'
+      depends_on:
+        - chrome
+        - firefox
+      volumes:
+          - './tests:/project/tests'
+          - './codeception.yml:/project/codeception.yml'
+  chrome:
+      image: 'selenium/standalone-chrome-debug:2.53.0'
+      ports:
+          - '5900'
+  firefox:
+      image: 'selenium/standalone-firefox-debug:2.53.0'
+      ports:
+          - '5900'
