@@ -20,7 +20,7 @@ Run the tests
     
     docker-compose run --rm codecept run
     
-See `_output` for test results.    
+See `tests/_output` for test results.    
 
 
 Setup
@@ -40,3 +40,14 @@ Usage
 -----
 
 Add `Cept`s to `tests/acceptance`.
+
+
+Resources
+---------
+
+- [Codeception](http://codeception.com)
+- [docker-yii2-app](https://github.com/dmstr/docker-yii2-app) Example for unit & functional testing with Codeception Docker container
+
+---
+
+#### ![dmstr logo](http://t.phundament.com/dmstr-16-cropped.png) Built by [dmstr](http://diemeisterei.de)
