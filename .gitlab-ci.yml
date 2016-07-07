@@ -2,6 +2,10 @@ stages:
   - test
   - cleanup
 
+before_script:
+  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+  - export COMPOSE_PROJECT_NAME=${ISOLATION}
+
 test:
   stage: test
   script:
@@ -12,3 +16,4 @@ cleanup:
   stage: cleanup
   script:
     - make clean
+  when: always
