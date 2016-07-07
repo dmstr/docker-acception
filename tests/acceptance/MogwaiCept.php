@@ -15,10 +15,12 @@ for ($c = 0; $c < 25; $c++) {
 
     $links = $I->grabMultiple('a[href^="/"]', 'href');
 
-    // start-over on dead-end
     if (empty($links)) {
+
+        // start-over on dead-end
         $I->amOnPage('/');
         $I->wait(1);
+
     } else {
 
         // debug output

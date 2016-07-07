@@ -21,8 +21,7 @@ up:      ##@development start stack
 
 clean:   ##@development remove all containers in stack
 	$(DOCKER_COMPOSE) kill
-	$(DOCKER_COMPOSE) rm -fv --all
-	$(DOCKER_COMPOSE) down --rmi local --remove-orphans
+	$(DOCKER_COMPOSE) rm -fv
 
 
 # Help based on https://gist.github.com/prwhite/8168133 thanks to @nowox and @prwhite
