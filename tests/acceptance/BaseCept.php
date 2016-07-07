@@ -2,7 +2,7 @@
 
 $I = new AcceptanceTester($scenario);
 
-$I->wantTo('ensure that Pages works');
+$I->wantTo('ensure that home page works');
 $I->amOnPage('/');
-$I->see('Example Domain');
-$I->makeScreenshot('success-pages-index');
+$I->seeElement('body');
+$I->makeScreenshot('success-home');
