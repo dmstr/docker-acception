@@ -1,0 +1,13 @@
+stages:
+  - test
+  - cleanup
+
+test:
+  stage: test
+  script:
+    - make all
+
+cleanup:
+  stage: cleanup
+  script:
+    - make clean
