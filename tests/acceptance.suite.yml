@@ -12,6 +12,7 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver
+        - Asserts
     config:
         WebDriver:
             host: firefox
@@ -27,7 +28,7 @@ env:
                 WebDriver:
                     browser: 'chrome'
                     host: chrome
-                    window_size: 1280x720
+                    window_size: 1440x960
 
     firefox:
         # nothing changed

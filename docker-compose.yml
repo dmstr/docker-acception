@@ -16,3 +16,4 @@ services:
       image: 'selenium/standalone-firefox-debug:2.53.0'
       ports:
           - '5900'
+      dns: 8.8.4.4
