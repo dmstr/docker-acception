@@ -5,6 +5,7 @@ stages:
 test:
   stage: test
   script:
+    - sed -i 's|http://www.example.com/|${TEST_URL}/|g' codeception.yml
     - make all
 
 cleanup:
