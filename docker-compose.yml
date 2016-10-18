@@ -5,6 +5,9 @@ services:
       depends_on:
         - chrome
         - firefox
+      environment:
+        - TEST_MOGWAI_USER=${TEST_MOGWAI_USER}
+        - TEST_MOGWAI_PASS=${TEST_MOGWAI_PASS}
       volumes:
           - './tests:/project/tests'
           - './codeception.yml:/project/codeception.yml'
