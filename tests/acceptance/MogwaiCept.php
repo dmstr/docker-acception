@@ -11,7 +11,7 @@ $url = '/';
 $I->amOnPage($url);
 $I->wait(1);
 
-for ($c = 0; $c < 25; $c++) {
+for ($c = 0; $c < getenv('TEST_MOGWAI_LIMIT')?:5; $c++) {
 
     $links = $I->grabMultiple('a[href^="/"]', 'href');
 
@@ -35,6 +35,6 @@ for ($c = 0; $c < 25; $c++) {
         $I->cantSeeElementInDOM('.site-error');
 
         // debug screenshot
-        #$I->makeScreenshot("gremlin-{$c}");
+        $I->makeScreenshot("mogwai-{$c}");
     }
 }
