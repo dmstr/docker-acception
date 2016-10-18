@@ -1,7 +1,7 @@
 Acception
 =========
 
-Dockerized instant codeception testing
+Dockerized instant acceptance testing with Codeception
 
 
 Requirements
