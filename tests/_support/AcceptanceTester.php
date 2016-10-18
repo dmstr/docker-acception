@@ -20,7 +20,14 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
-   /**
-    * Define custom actions here
-    */
+    /**
+     * Define custom actions here
+     */
+    public function login($username, $password){
+        $this->amOnPage('/user/security/login');
+        $this->fillField('input[name="login-form[login]"]', $username);
+        $this->fillField('input[name="login-form[password]"]', $password);
+        $this->click('#login-form button');
+        $this->waitForElementNotVisible('#login-form', 5);
+    }
 }
