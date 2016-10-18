@@ -45,9 +45,10 @@ Add `Cept`s to `tests/acceptance`.
 Resources
 ---------
 
-- [Documentation](./docs/README.md)
-- [Codeception](http://codeception.com)
-- [docker-yii2-app](https://github.com/dmstr/docker-yii2-app) Example for unit & functional testing with Codeception Docker container
+- :green_book: [Documentation](./docs/README.md)
+- :black_circle: [`dmstr/docker-acception`](https://github.com/dmstr/docker-acception)
+- :white_circle: [`dmstr/docker-yii2-app`](https://github.com/dmstr/docker-yii2-app) Example for unit & functional testing with Codeception Docker container
+- :cd: [Codeception](http://codeception.com)
 
 ---
 
