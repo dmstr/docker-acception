@@ -1,7 +1,7 @@
 include Makefile.base
 
 all:	 ##@test [TEST] shorthand for
-	$(MAKE) clean up run-tests
+	$(MAKE) up run-tests
 
 bash:	 ##@development open application development bash
 	$(DOCKER_COMPOSE) run --rm --entrypoint bash codecept

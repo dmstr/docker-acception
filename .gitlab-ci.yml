@@ -10,7 +10,9 @@ test:
   stage: test
   script:
     - sed -i "s|http://www.example.com/|${TEST_URL}/|g" tests/acceptance.suite.yml
-    - make all
+    - make up
+    - sleep 5
+    - make run-tests
   artifacts:
     paths:
       - tests/_output
