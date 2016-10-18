@@ -11,6 +11,10 @@ $url = '/';
 $I->amOnPage($url);
 $I->wait(1);
 
+if (getenv('TEST_MOGWAI_USER') && getenv('TEST_MOGWAI_PASS')) {
+    $I->login(getenv('TEST_MOGWAI_USER'), getenv('TEST_MOGWAI_PASS'));
+}
+
 if (getenv('TEST_MOGWAI_LIMIT')) {
     $limit = getenv('TEST_MOGWAI_LIMIT');
 } else {
