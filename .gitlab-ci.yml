@@ -11,6 +11,10 @@ test:
   script:
     - sed -i "s|http://www.example.com/|${TEST_URL}/|g" tests/acceptance.suite.yml
     - make all
+  artifacts:
+    paths:
+      - tests/_output
+    when: always
 
 cleanup:
   stage: cleanup
