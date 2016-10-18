@@ -11,7 +11,13 @@ $url = '/';
 $I->amOnPage($url);
 $I->wait(1);
 
-for ($c = 0; $c < getenv('TEST_MOGWAI_LIMIT')?:5; $c++) {
+if (getenv('TEST_MOGWAI_LIMIT')) {
+    $limit = getenv('TEST_MOGWAI_LIMIT');
+} else {
+    $limit = 5;
+}
+
+for ($c = 0; $c < $limit; $c++) {
 
     $links = $I->grabMultiple('a[href^="/"]', 'href');
 
