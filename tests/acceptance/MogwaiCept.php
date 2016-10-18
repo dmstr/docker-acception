@@ -1,6 +1,6 @@
 <?php
 
-// @group optional
+// @group essential
 // inspired by https://github.com/marmelab/gremlins.js
 
 $I = new AcceptanceTester($scenario);

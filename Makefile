@@ -7,7 +7,7 @@ bash:	 ##@development open application development bash
 	$(DOCKER_COMPOSE) run --rm --entrypoint bash codecept
 
 run-tests:	 ##@test run tests
-	$(DOCKER_COMPOSE) run codecept run -vv --html=_report.html
+	$(DOCKER_COMPOSE) run codecept run -x optional -vv --html=_report.html
 
 open-vnc:	 ##@test open application database service in browser
 	$(OPEN_CMD) vnc://x:secret@$(DOCKER_HOST_IP):$(shell $(DOCKER_COMPOSE) port firefox 5900 | sed 's/[0-9.]*://')
