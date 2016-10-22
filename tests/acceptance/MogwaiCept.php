@@ -45,6 +45,7 @@ for ($c = 0; $c < $limit; $c++) {
         $I->cantSeeElementInDOM('.site-error');
 
         // debug screenshot
-        $I->makeScreenshot("mogwai-{$c}");
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $url)));
+        $I->makeScreenshot("mogwai-{$c}-{$slug}");
     }
 }
