@@ -8,6 +8,7 @@ services:
       environment:
         - TEST_MOGWAI_USER=${TEST_MOGWAI_USER}
         - TEST_MOGWAI_PASS=${TEST_MOGWAI_PASS}
+        - TEST_MOGWAI_LIMIT=${TEST_MOGWAI_LIMIT}
       volumes:
           - './tests:/project/tests'
           - './codeception.yml:/project/codeception.yml'
