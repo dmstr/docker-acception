@@ -1,13 +1,12 @@
-before_script:
-  - export ISOLATION=buildref${CI_BUILD_REF}$(echo ${CI_BUILD_REF_NAME}${TEST_URL} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
-  - export COMPOSE_PROJECT_NAME=${ISOLATION}
+variables:
+  COMPOSE_PROJECT_NAME: "buildpipeline${CI_PIPELINE_ID}${CI_BUILD_NAME}"
 
 test:
   stage: test
   script:
     - sed -i "s|http://www.example.com/|${TEST_URL}/|g" tests/acceptance.suite.yml
     - make up
-    - sleep 5
+    - sleep 7
     - make run-tests
   artifacts:
     paths:
