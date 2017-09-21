@@ -1,7 +1,7 @@
 Acception
 =========
 
-Dockerized instant acceptance testing with Codeception
+Dockerized instant acceptance testing for any website with Codeception
 
 
 Requirements
@@ -12,13 +12,9 @@ Requirements
 Quick Start
 -----------
 
-Start the stack
-
-    docker-compose up -d
-
 Run the tests    
     
-    docker-compose run --rm codecept run
+    docker-compose run --rm codecept run -d
     
 See `tests/_output` for test results.    
 
@@ -35,11 +31,33 @@ modules:
             url: http://my-domain.com/
 ```
 
-
 Usage
 -----
 
-Add `Cept`s to `tests/acceptance`.
+Enter the tester container and open VNC connections Firefox and Chrome
+
+    make open-vnc bash
+
+Create `Cept`s to `tests/acceptance/project`.
+
+    $ codecept generate:cept acceptance project/Products
+    
+Edit the newly generated file, ie.
+
+    $I->amOnPage('products.php');
+    $I->see('Products', 'h1');
+
+And run the tests
+
+    $ codecept run acceptance project
+   
+For more information how to use Codeception, run `codecept --help` or visit their [documentation](http://codeception.com/docs/).
+   
+
+### Tips & tricks
+
+- [`$I->pauseExecution`](http://codeception.com/docs/modules/WebDriver#pauseExecution) is very helpful in debug modde
+- There are a lot of [extensions/modules](http://codeception.com/addons) available for Codeception   
 
 
 Resources
