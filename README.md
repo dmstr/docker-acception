@@ -14,7 +14,7 @@ Quick Start
 
 Run the tests    
     
-    docker-compose run --rm codecept run -d
+    docker-compose run --rm codecept run -d acceptance example
     
 See `tests/_output` for test results.    
 
